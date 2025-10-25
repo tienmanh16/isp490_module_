@@ -5,7 +5,7 @@ import LanguageSelector from "./LanguageSelector";
 import { CODE_SNIPPETS } from "../constants";
 import Output from "./Output";
 
-const CodeEditor = () => {
+const CodeEditor = ({ exerciseId = 1 }) => {
   const editorRef = useRef();
   const [value, setValue] = useState("");
   const [language, setLanguage] = useState("javascript");
@@ -40,7 +40,7 @@ const CodeEditor = () => {
             onChange={(value) => setValue(value)}
           />
         </Box>
-        <Output editorRef={editorRef} language={language} />
+        <Output editorRef={editorRef} language={language} exerciseId={exerciseId} />
       </HStack>
     </Box>
   );
